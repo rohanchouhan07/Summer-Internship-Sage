@@ -1,0 +1,30 @@
+# inline css
+use inline csss to applu to a specific element note that this is not optimal for large projects as it can make the code messy and difficult to maintain. It is generally recommended to use external stylesheets or internal stylesheets for better organization and maintainability of your CSS code.
+<h1 style="color: blue; font-size: 24px;">This is a heading with inline CSS</h1>
+<p style="color: red; font-size: 16px;">This is a paragraph with
+
+
+
+# internal css
+Internal CSS is a method of applying styles to a specific HTML document by including the CSS code within the <style> tags in the head section of the HTML file. This allows you to define styles that will only apply to that particular document, making it easier to manage and maintain your styles for that specific page.
+
+<style>
+  h1 {
+    color: green;
+    font-size: 30px;
+  }
+  
+  p {
+    color: orange;
+    font-size: 18px;
+  }
+</style>
+<body>
+<h1>Internal CSS Example</h1>
+<p>This is a paragraph styled with internal CSS.</p>
+</body>
+
+#external css
+External CSS is a method of applying styles to multiple HTML documents by linking an external CSS file to the HTML files. This allows you to maintain a single CSS file that can be reused across multiple pages, making it easier to manage and update your styles in one place.
+<!-- Link to external CSS file -->
+<link rel="stylesheet" type="text/css" href="styles.css">
