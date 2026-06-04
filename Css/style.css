@@ -1,0 +1,19 @@
+h1{
+    color: #ff0f0f;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.boy{
+    color: #ed0000;
+    font-size: 18px;
+}
+.girl{
+    color: #0f0fff;
+    font-size: 18px;
+}
+
+#para{
+    color: #ff02f2;
+    font-size: 16px;
+}
