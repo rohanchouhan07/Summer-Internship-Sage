@@ -4,71 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table</title>
+    <link rel="stylesheet" href="C:\Users\rohan\OneDrive\Desktop\Internship Sage\Css\homework1.css">
 </head>
-<style>
-    .timetable{
-        width: 50%;
-        height: 100%;
-        text-align: center;
-        padding: auto;
-        margin: auto;
-        /* border-collapse: collapse; */
-        color: rgb(0, 0, 0);
-        border: 1PX solid black;
-
-    }
-
-</style>
 <body >
-    HOMEWORK
-    <H3 class="timetable"> TIME TABLE</H3>
+    <H3 class="heading" id="t"> TIME TABLE</H3><hr><br>
     <table class="timetable" border="1px" style="text-align: center;">
         <tr>
-            <th></th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th></th>
-            <th colspan="2">4</th>
-            <th colspan="2">6</th>
+            <th class="heading"></th>
+            <th class="heading">1</th>
+            <th class="heading">2</th>
+            <th class="heading">3</th>
+            <th class="heading"></th>
+            <th class="heading" colspan="2">4</th>
+            <th class="heading" colspan="2">6</th>
         </tr>
         <tr>
-            <th>Mon</th>
-            <td>C++</td>
-            <td>HTML</td>
-            <td>CSS</td>
-            <td rowspan="5"><b>B <br>R<br>E <br>A <br>K</b></td>
+            <th class="heading">Mon</th>
+            <td class="ob">C++</td>
+            <td class="ob">HTML</td>
+            <td class="ob">CSS</td>
+            <td id="ob" class="heading" rowspan="5"><b>B <br>R<br>E <br>A <br>K</b></td>
 
-            <td colspan="2">JAVA</td> 
-            <td colspan="2">C++</td>
+            <td class="ob" colspan="2">JAVA</td> 
+            <td class="ob" colspan="2">C++</td>
         </tr>
         <tr>
-            <th>Tue</th>
-            <td rowspan="3">Hindi</td>
-            <td colspan="2">WebDev</td>
-            <td>C++</td>
-            <td>HTML</td>
-            <td>CSS</td>
-            <td rowspan="2">OS</td>
+            <th class="heading">Tue</th>
+            <td class="ob" rowspan="3">Hindi</td>
+            <td class="ob" colspan="2">WebDev</td>
+            <td class="ob">C++</td>
+            <td class="ob">HTML</td>
+            <td class="ob">CSS</td>
+            <td class="ob" rowspan="2">OS</td>
         </tr>
         <tr>
-            <th>Wed</th>
-            <td colspan="2">C++</td>
-            <td colspan="3">Django</td>
+            <th class="heading">Wed</th>
+            <td class="ob" colspan="2">C++</td>
+            <td class="ob" colspan="3">Django</td>
         </tr>
         <tr>
-            <th>Thu</th>
-            <td colspan="2">JAVA</td>
-            <td>English</td>
-            <td>Go</td>
-            <td colspan="2">Network</td>
+            <th class="heading">Thu</th>
+            <td class="ob" colspan="2">JAVA</td>
+            <td class="ob">English</td>
+            <td class="ob">Go</td>
+            <td class="ob" colspan="2">Network</td>
         </tr>
         <tr>
-            <th>Fri</th>
-            <td colspan="3">Data Science</td>
-            <td colspan="2">C++</td>
-            <td>Go</td>
-            <td>Python</td>
+            <th class="heading">Fri</th>
+            <td class="ob" colspan="3">Data Science</td>
+            <td class="ob" colspan="2">C++</td>
+            <td class="ob">Go</td>
+            <td class="ob">Python</td>
         </tr>
     </table>
 </body>

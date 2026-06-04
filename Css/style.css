@@ -17,3 +17,18 @@ h1{
     color: #ff02f2;
     font-size: 16px;
 }
+
+/*for all elements */
+*{
+    font-family: Arial, sans-serif;
+    background-color: lightseagreen;
+}
+
+/* for multiple selectors */
+p,h1,h3{
+    margin: 0;
+    padding: 0;
+}
+div p{
+    color: #00ff00;
+}
