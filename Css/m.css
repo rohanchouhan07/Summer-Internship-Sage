@@ -14,6 +14,7 @@ h1~p{
     height: 100px;
     width: 100px;
     border: 2px solid red; 
-    /* padding: 10px; */
-    /* margin: 10px; */
+    /* text-decoration:rgb(from color r g b); */
+    display:inlne-block;
+    display: ;
 }
