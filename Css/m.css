@@ -1,0 +1,19 @@
+h1~p{
+    color:aqua
+}
+/* relative is overlap */
+.box{
+    height: 200px;
+    width: 300px;
+    border: 2px solid black;
+    margin: 20px;
+    position: absolute;
+    left: 10px;
+}
+#f{
+    height: 100px;
+    width: 100px;
+    border: 2px solid red; 
+    /* padding: 10px; */
+    /* margin: 10px; */
+}

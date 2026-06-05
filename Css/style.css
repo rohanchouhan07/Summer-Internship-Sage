@@ -22,16 +22,16 @@ h1{
 
 
 /* for multiple selectors */
-p,h1,h3{
+p,h1,h3{ 
     margin: 0;
     padding: 0;
+} 
+
+h1~p{
+    color:#ff0f0f;
+    background-color: #0f0fff;
 }
 .box{
-    height: 100px;
-    width: 100px;
-    border: 2px solid #000000;
-    /* margin: ; */
-    padding: 100px ;
-    border-radius: 70px;
+   border: 2px solid black; 
 
 }
