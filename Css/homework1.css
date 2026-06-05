@@ -1,77 +1,71 @@
-*{
-    margin: auto;
-    padding: auto;
-    /* background-color: #f5f5f5; */
-    text-align: center;
-    text-decoration: none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-transform: uppercase;
-    /* border: 5px solid     rgb(255, 255, 255); */
-    height: 50px;
+}
 
+body {
+    background-color: #f4f7f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
 }
-.timetable{
-        width: 50%;
-        height: 100%;
-        text-align: center;
-        padding: auto;
-        margin: auto;
-        border-collapse: collapse;
-        color: rgb(0, 0, 0);
-        border: 1PX solid black;
 
-}
-.heading{
-    background-color: #4e1616;
-    font-size: 30px;
-    color: #ffa468;    
-}
-.ob{
-    background-color: #FFF8EA;
-    color: #8d6b6b;
-    font-size: 30px;
-    font-weight: bold;
-}
-#t{
-    color: #e9ff6b;
+.main-heading {
+    color: #2c3e50;
     font-size: 40px;
+    margin-bottom: 25px;
 }
-#b{
-    color: rgb(255, 153, 0);
-    font-size: 30px;
+.timetable {
+    width: 80%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background-color: #ffffff;
 }
-.row5{
-    background-color: #400e0e;
-    font-size: 30px;
-    font-weight: bold;
-    color: #9e7a34;
+th, td {
+    padding: 18px 15px;
+    text-align: center;
+    border: 1px solid #e0e6ed;
+    font-size: 18px;
+    font-weight: 500;
+}
 
-}
-.row4{
-    background-color: #571c1c;
-    font-size: 30px;
+.heading {
+    background-color: #34495e;
+    color: #ffffff;
     font-weight: bold;
-    color: #9a7939;
-
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.row3{
-    background-color: #6b2929;
-    font-size: 30px;
-    font-weight: bold;
-    color: #8f733c;
 
+.side-heading {
+    background-color: #2c3e50; }
+
+#ob {
+    background-color: #ff4343; 
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
 }
-.row2{
-    background-color: #7f4747;
-    font-size: 30px;
-    font-weight: bold;
-    color: #b49351;
-
+.row1 td {
+    background-color: #e8f4f8;
+    color: #2c3e50;
 }
-.row1{
-    background-color: #9e5656;
-    font-size: 30px;
-    font-weight: bold;
-    color: #cea95e;
-
+.row2 td {
+    background-color: #f0f4c3;
+    color: #33691e;
+}
+.row3 td {
+    background-color: #e1bee7;
+    color: #4a148c;
+}
+.row4 td {
+    background-color: #c8e6c9;
+    color: #1b5e20;
+}
+.row5 td {
+    background-color: #ffccbc;
+    color: #bf360c;
 }

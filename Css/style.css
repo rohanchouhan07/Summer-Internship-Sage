@@ -19,16 +19,19 @@ h1{
 }
 
 /*for all elements */
-*{
-    font-family: Arial, sans-serif;
-    background-color: lightseagreen;
-}
+
 
 /* for multiple selectors */
 p,h1,h3{
     margin: 0;
     padding: 0;
 }
-div p{
-    color: #00ff00;
+.box{
+    height: 100px;
+    width: 100px;
+    border: 2px solid #000000;
+    /* margin: ; */
+    padding: 100px ;
+    border-radius: 70px;
+
 }
