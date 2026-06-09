@@ -23,12 +23,21 @@
 }
 .main2{
     height: 100%;
-    width: 80%;
+    width: 50%;
     padding: 0;
     margin: 0;
 }
+.main3{
+    height: 100%;
+    width: 30%;
+    text-align: justify;
+    padding: 40px;
+    margin-top: 30px;
+    border: 2px solid black;
+}
 .main22{
     display: flex;
+    left: 0%;
 }
 #text{
     font-size: 16px;
@@ -128,11 +137,29 @@ body {
     bottom:3px;
     left: 3px;
 }
+#dimg1{
+    position: absolute;
+    top:30%;
+    left: 750px;
+}
 #dimg3{
     position: absolute;
     top:680px;
+    left: 750px;
 }
 #dimg2{
     position: absolute;
     top:460px;
+    left: 750px;
+}
+.getapp{
+    height: 40px;
+    width: 100px;
+    background-color: black;
+    border-radius: 75px;
+    position: absolute;
+    left:70%;
+    text-align: center;
+    color: #e2e2e2;
+    font-size: 15px;
 }
