@@ -26,7 +26,11 @@ p,h1,h3{
     margin: 0;
     padding: 0;
 } 
-
+#img{
+    height: 100px;
+    width: 100px;
+    border: 2px solid red;
+}
 h1~p{
     color:#ff0f0f;
     background-color: #0f0fff;
@@ -35,3 +39,12 @@ h1~p{
    border: 2px solid black; 
 
 }
+@media(min-width:600px) and (max-width:1000px){
+    body{
+        background-color: #ed0000;
+    }
+}
+/* mobile upto 480px */
+/* tablet 481 to 768px */
+/* smalll laptop 769 to 1024s */
+/* desktop 1024 to above */
