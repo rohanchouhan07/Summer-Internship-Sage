@@ -1,0 +1,33 @@
+*{
+    /* border: 2px solid black; */
+    margin: 0;
+    padding: 0;
+}
+.main{
+    display: flex;
+}
+.navbar{
+    margin-top: 0;
+    width :100%;
+    background: linear-gradient(to right,rgb(91,202,215),rgb(181, 65, 181));
+}
+.small_sidebar{
+    border: 1px solid black; 
+    height: 92%;
+    width :10% ;
+    justify-items: center;
+    
+    
+}
+.sidebar{
+    border: 1px solid black; 
+    height: 92%;
+    width :20% 
+    
+}
+.screen{
+    height: 92%;
+    width :70%; 
+    border: 1px solid black; 
+
+}
