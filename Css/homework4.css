@@ -1,0 +1,159 @@
+*{
+    margin: auto;
+    /* padding: 1px; */
+}   
+.main{
+    height: 100vh;
+    /* border: 10px solid red; */
+    display: flex;
+}
+.main1{
+    /* border: 2px solid black; */
+    height: 100vh;
+    width: 60%;
+    /* margin-top: 100px; */
+}
+.img1{
+    height: 150px;
+    width: 300px;
+    position: absolute;
+    left: 20%;
+    top: 75px;
+    border-radius: 20px;
+    filter: grayscale(100%);
+    opacity: 30%;
+}
+
+.img1:hover{
+    filter: none;
+    transform: scale(1.2);
+    z-index: 9;
+    opacity: 100%;
+
+}
+.img2{
+    filter: grayscale(100%);
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    left: 17%;
+    top: 170px;
+    border-radius: 20px;
+    opacity: 30%;
+}
+.img2:hover{
+    filter: none;
+    transform: scale(1.4);
+    z-index: 9;
+    opacity: 100%;
+}
+.img3{
+    height: 250px;
+    width: 500px;
+    position: absolute;
+    left: 14.5%;
+    top: 300px;
+    border-radius: 20px;
+    z-index: 2;
+    filter: grayscale(10%);
+    opacity: 50%;
+
+}
+.img3:hover{
+    filter: none;
+    transform: scale(1.4);
+    z-index: 9;
+    opacity: 100%;
+}
+.img4{
+    filter: grayscale(100%);
+    height: 200px;
+    width: 400px;
+    position: absolute;
+    left: 17%;
+    top: 470px;
+    border-radius: 20px;
+    z-index: 1;
+    opacity: 30%;
+}
+.img4:hover{
+    filter: none;
+    transform: scale(1.4);
+    z-index: 9;
+    opacity: 100%;
+}
+.img5{
+    filter: grayscale(100%);
+    height: 150px;
+    width: 300px;
+    position: absolute;
+    left: 20%;
+    top: 620px;
+    border-radius: 20px;
+    z-index: 0.5;
+    opacity: 30%;
+}
+.img5:hover{
+    filter: none;
+    transform: scale(1.2);
+    z-index: 9;
+    opacity: 100%;
+}
+.main2{
+    /* border: 2px solid blueviolet; */
+    height: 100vh;
+    width: 40%;
+}
+img{
+    border-radius: 20px;
+}
+div h1{
+    color:rgb(75, 7, 7);
+    position: absolute;
+    top: 40%;
+    left:50%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 70px;
+}
+div p{
+    color:rgb(118, 112, 112);
+    position: absolute;
+    top: 50%;
+    text-justify: auto;
+    word-spacing: 10px;
+    text-spacing-trim : space-all;
+    left:60%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+}
+#b1{
+    position: absolute;
+    top: 28%;
+    left:60%;
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;
+    
+}
+#b2{
+    position: absolute;
+    top: 28%;
+    left:68%;
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;
+
+}
+span {
+  content: "\2193";
+  content: "\2191";
+
+}
+.dot{
+    position: absolute;
+    top: 54%;
+    left:64%;
+
+}

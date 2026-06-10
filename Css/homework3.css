@@ -170,23 +170,28 @@ body {
     top:460px;
     left: 820px;
 }
-.getapp{
+ .getapp{
     height: 40px;
     width: 100px;
-    background-color: black;
+    /* background-color: black; */
     border-radius: 75px;
     position: absolute;
     left:70%;
     text-align: center;
     color: #e2e2e2;
     font-size: 15px;
+    display: flex;
+    border: 2px solid black;
+    padding: 10px;
+    align-items: center;
 }
 .write{
     height: 40px;
     width: 100px;
     margin-left:45%;
     border: 2px solid black;
-
+    align-items: center;
+    /* padding: 10px; */
 }
 #w1{
     margin-top: 0px;
