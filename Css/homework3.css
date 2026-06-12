@@ -173,7 +173,7 @@ body {
  .getapp{
     height: 40px;
     width: 100px;
-    /* background-color: black; */
+    background-color: black;
     border-radius: 75px;
     position: absolute;
     left:70%;
@@ -187,10 +187,11 @@ body {
 }
 .write{
     height: 40px;
-    width: 100px;
+    width: 200px;
     margin-left:45%;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     align-items: center;
+    text-align: center;
     /* padding: 10px; */
 }
 #w1{
