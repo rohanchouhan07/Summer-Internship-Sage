@@ -113,3 +113,80 @@ product_list=[ { name: "Laptop", price: 50000 }, { name: "Phone", price: 20000 }
 const tt=product_list.map(emp=>emp.price)
 const oo=tt.reduce((sum,item)=>sum+item,0);
 console.log(oo);
+hp=Math.max(...tt)
+console.log(hp)
+
+Even_Numbers =[1, 2, 3, 4, 5, 6];
+
+const en=Even_Numbers.map(emp=>emp.Even_Numbers)
+// if(en%2==0){
+//     console.log(en)
+// }
+for(i of Even_Numbers){
+    if(i%2==0){
+        console.log('only even',i);
+    }
+} 
+for(i of Even_Numbers){
+    if(i%2==0){
+        console.log('their squares',i*i);
+    }
+} 
+
+Student_Marks=[45, 80, 60, 90, 30];
+const s1=Student_Marks.filter(gg=>gg> 50);
+console.log(s1);
+const avg2=Student_Marks.map(item=>item);
+const total7=avg2.reduce((sum,item)=>sum+item,0);
+const length=avg2.length
+console.log('Avg= ',total7/length)
+
+
+Shopping_Cart =[  { item: "Book", price: 200 }, { item: "Pen", price: 20 }, { item: "Bag", price: 500 } ];
+const ff=Shopping_Cart.map(item=>item.price);
+const t5=ff.reduce((sum,item)=>sum+item,0)
+console.log('total= ',t5);
+
+Names_List= ["john", "emma", "alex"];
+const toupp=Names_List.map(name=>name.toUpperCase());
+console.log(toupp);
+
+Numbers_Sum =[10, 20, 30, 40];
+const t6=Numbers_Sum.map(item=>item);
+const ans=t6.reduce((sum,item)=>sum+item,0) ;
+console.log(ans);
+
+
+
+Adult =[  { name: "John", age: 25 }, { name: "Emma", age: 16 }, { name: "Alex", age: 20 } ];
+
+const aaa= Adult.filter(item=>item.age >18);
+console.log(aaa);
+
+
+
+const products = [ 
+  { name: "Laptop", price: 50000 }, 
+  { name: "Phone", price: 20000 } 
+];
+const discountedProducts = products.map(product => {
+  return {
+    name: product.name,
+    price: product.price * 0.90 
+  };
+});
+console.log(discountedProducts);
+const updatedPricesOnly = discountedProducts.map(p => p.price);
+console.log(updatedPricesOnly);
+
+
+Exam = [  { name: "John", marks: 80 }, { name: "Emma", marks: 40 }, { name: "Alex", marks: 70 } ];
+
+
+const examm=Exam.map(item=>{
+    return {
+        name:item.name,
+        marks:item.marks >=50
+    }
+});
+console.log(examm)
