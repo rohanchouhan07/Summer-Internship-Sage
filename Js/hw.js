@@ -58,6 +58,58 @@ const inventory = [
 ];
 
 const availableProducts = inventory
-  .filter(item => item.stock > 0)
+  .filter(item => item.stock == 0)
   .map(item => item.name);
 console.log(availableProducts); 
+
+const inStockProducts = inventory.filter(item => item.stock > 0);
+console.log(inStockProducts);
+
+const posts = [ 
+  { postId: 1, likes: 100 }, 
+  { postId: 2, likes: 200 } 
+];
+
+const totalLikes = posts.reduce((sum, post) => sum + post.likes, 0);
+console.log(totalLikes); 
+
+movie=[  
+    { title: "Movie A", rating: 8.5 },
+     { title: "Movie B", rating: 6.0 } ]
+
+const ratinggthan8 = movie.filter(item=>item.rating >8);
+console.log(ratinggthan8);
+
+const titles=movie.map(t =>t.title);
+console.log(titles);
+
+
+csmt=[  
+    { customer: "John", amount: 50000 }, 
+    { customer: "Emma", amount: 20000 } ];
+
+
+const s = csmt.map(emp => emp.amount)
+const ts = s.reduce((sum, currentSalary) => sum + currentSalary, 0);
+console.log(ts);
+
+credit=[  { type: "credit", amount: 1000 }, { type: "debit", amount: 300 }, { type: "credit", amount: 500 } ]
+const cd=credit.map(emp=>emp.amount)
+const total =cd.reduce((sum,item)=>sum+item,0)
+console.log(total)
+
+login=[  { user: "A", action: "login" }, { user: "B", action: "logout" }, { user: "C", action: "login" } ];
+
+const ma=login.filter(item=>item.action=="login");
+console.log(ma);
+
+github=[  { repo: "A", stars: 100 }, { repo: "B", stars: 200 } ];
+
+const total1=github.map(emp=>emp.stars);
+const cout=total1.reduce((sum,item)=>sum+item,0);
+console.log(cout);
+
+product_list=[ { name: "Laptop", price: 50000 }, { name: "Phone", price: 20000 }, { name: "Tablet", price: 15000 } ];
+const tt=product_list.map(emp=>emp.price)
+const oo=tt.reduce((sum,item)=>sum+item,0);
+console.log(oo);
