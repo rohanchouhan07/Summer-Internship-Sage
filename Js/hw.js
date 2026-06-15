@@ -12,8 +12,8 @@ const avg=details.map(student =>
     };
 });
 
-
 console.log(avg);
+
 
 
 // 2.
