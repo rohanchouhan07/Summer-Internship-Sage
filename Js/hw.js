@@ -16,6 +16,8 @@ const avg=details.map(student =>
 console.log(avg);
 
 
+// 2.
+
 sales=[ 
 { category: "Electronics", amount: 500 }, 
 { category: "Books", amount: 100 }, 
@@ -30,6 +32,8 @@ const totalRevenue = sales.reduce((acc, item) => {
 console.log(totalRevenue);
 
 
+// 3.
+
 const text = "The fox is quick. The fox is smart." ;
 const wordsArray = text.replace(/[^\w\s]/g, '').toLowerCase().split(/\s+/);
 const targetWord = "fox";
@@ -38,6 +42,8 @@ const count = wordsArray.filter(word => word === targetWord).length;
 console.log(wordsArray);
 console.log(`The word "${targetWord}" appears ${count} times.`);
 
+
+// 4.
 const employees = [
   { name: "A", salary: 50000 },
   { name: "B", salary: 40000 },
@@ -50,6 +56,7 @@ console.log(salaries);
 const totalSalary = salaries.reduce((sum, currentSalary) => sum + currentSalary, 0);
 console.log(totalSalary); 
 
+// 5.
 
 const inventory = [ 
   { name: "Laptop", stock: 5 }, 
@@ -65,6 +72,8 @@ console.log(availableProducts);
 const inStockProducts = inventory.filter(item => item.stock > 0);
 console.log(inStockProducts);
 
+
+// 6.
 const posts = [ 
   { postId: 1, likes: 100 }, 
   { postId: 2, likes: 200 } 
@@ -73,6 +82,8 @@ const posts = [
 const totalLikes = posts.reduce((sum, post) => sum + post.likes, 0);
 console.log(totalLikes); 
 
+
+// 7.
 movie=[  
     { title: "Movie A", rating: 8.5 },
      { title: "Movie B", rating: 6.0 } ]
@@ -84,6 +95,8 @@ const titles=movie.map(t =>t.title);
 console.log(titles);
 
 
+// 8.
+
 csmt=[  
     { customer: "John", amount: 50000 }, 
     { customer: "Emma", amount: 20000 } ];
@@ -93,22 +106,30 @@ const s = csmt.map(emp => emp.amount)
 const ts = s.reduce((sum, currentSalary) => sum + currentSalary, 0);
 console.log(ts);
 
+
+// 9.
 credit=[  { type: "credit", amount: 1000 }, { type: "debit", amount: 300 }, { type: "credit", amount: 500 } ]
 const cd=credit.map(emp=>emp.amount)
 const total =cd.reduce((sum,item)=>sum+item,0)
 console.log(total)
 
+
+// 10.
 login=[  { user: "A", action: "login" }, { user: "B", action: "logout" }, { user: "C", action: "login" } ];
 
 const ma=login.filter(item=>item.action=="login");
 console.log(ma);
 
+
+// 11.
 github=[  { repo: "A", stars: 100 }, { repo: "B", stars: 200 } ];
 
 const total1=github.map(emp=>emp.stars);
 const cout=total1.reduce((sum,item)=>sum+item,0);
 console.log(cout);
 
+
+// 12.
 product_list=[ { name: "Laptop", price: 50000 }, { name: "Phone", price: 20000 }, { name: "Tablet", price: 15000 } ];
 const tt=product_list.map(emp=>emp.price)
 const oo=tt.reduce((sum,item)=>sum+item,0);
@@ -116,6 +137,8 @@ console.log(oo);
 hp=Math.max(...tt)
 console.log(hp)
 
+
+// 13.
 Even_Numbers =[1, 2, 3, 4, 5, 6];
 
 const en=Even_Numbers.map(emp=>emp.Even_Numbers)
@@ -133,6 +156,8 @@ for(i of Even_Numbers){
     }
 } 
 
+
+// 14.
 Student_Marks=[45, 80, 60, 90, 30];
 const s1=Student_Marks.filter(gg=>gg> 50);
 console.log(s1);
@@ -142,29 +167,34 @@ const length=avg2.length
 console.log('Avg= ',total7/length)
 
 
+
+// 15.
 Shopping_Cart =[  { item: "Book", price: 200 }, { item: "Pen", price: 20 }, { item: "Bag", price: 500 } ];
 const ff=Shopping_Cart.map(item=>item.price);
 const t5=ff.reduce((sum,item)=>sum+item,0)
 console.log('total= ',t5);
 
+
+// 16.
 Names_List= ["john", "emma", "alex"];
 const toupp=Names_List.map(name=>name.toUpperCase());
 console.log(toupp);
 
+
+// 17.
 Numbers_Sum =[10, 20, 30, 40];
 const t6=Numbers_Sum.map(item=>item);
 const ans=t6.reduce((sum,item)=>sum+item,0) ;
 console.log(ans);
 
-
-
+// 18.
 Adult =[  { name: "John", age: 25 }, { name: "Emma", age: 16 }, { name: "Alex", age: 20 } ];
 
 const aaa= Adult.filter(item=>item.age >18);
 console.log(aaa);
 
 
-
+// 19.
 const products = [ 
   { name: "Laptop", price: 50000 }, 
   { name: "Phone", price: 20000 } 
@@ -180,9 +210,9 @@ const updatedPricesOnly = discountedProducts.map(p => p.price);
 console.log(updatedPricesOnly);
 
 
+
+// 20.
 Exam = [  { name: "John", marks: 80 }, { name: "Emma", marks: 40 }, { name: "Alex", marks: 70 } ];
-
-
 const examm=Exam.map(item=>{
     return {
         name:item.name,
