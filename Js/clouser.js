@@ -162,3 +162,4 @@ console.log(rpk)
 // *check the condition on all erray elemt  
 const rpkh=array.every((x)=>x>3);
 console.log(rpkh)
+
