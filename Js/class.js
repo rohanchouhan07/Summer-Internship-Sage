@@ -87,22 +87,24 @@ dog11.makesound();
 
 // !medthod over
 class stds{
-    constructor(name){
+    constructor(name,id){
         this.name=name;
+        this.id=id;
+
     }
     study(name1){
         console.log(`${name1} is studing`)
     }
 }
 class codeing extends stds{
-    constructor(name){
-        super(name);
+    constructor(name,id){
+        super(name,id);
     }
     work(){
-        console.log(`${this.name} is codding`)
+        console.log(`${this.name} is codding id ${this.id}`)
     }
 }
 
-let g=new codeing("Rohan");
+let g=new codeing("Rohan",101);
 g.study("Divya");
 g.work();
