@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM & BOM Creative Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            transition: background-color 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 { color: #333; }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #0056b3; }
+        .bom-info {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 15px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .item-list {
+            margin-top: 20px;
+            text-align: left;
+            width: 100%;
+        }
+        .note-card {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: fadeIn 0.4s ease;
+        }
+        .delete-btn {
+            background-color: #dc3545;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        .delete-btn:hover { background-color: #bd2130; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Dynamic Note Taker</h1>
+        
+        <!-- BOM creative application: Real-time window metrics -->
+        <div class="bom-info" id="windowTracker">
+            Resize your window! Current Width: <span id="windowWidth">0</span>px
+        </div>
+
+        <!-- Input and Buttons -->
+        <input type="text" id="noteInput" placeholder="Type a new note here...">
+        <br>
+        <button id="addBtn">Add Note (DOM)</button>
+        <button id="surpriseBtn">BOM Random Background</button>
+
+        <!-- Dynamic DOM container -->
+        <div class="item-list" id="notesContainer"></div>
+    </div>
+
+    <script>
+        // --- 1. DOM ELEMENTS HANDLING ---
+        const noteInput = document.getElementById('noteInput');
+        const addBtn = document.getElementById('addBtn');
+        const surpriseBtn = document.getElementById('surpriseBtn');
+        const notesContainer = document.getElementById('notesContainer');
+        const windowWidthSpan = document.getElementById('windowWidth');
+
+        // --- 2. DOM MANIPULATION: Add & Delete Elements ---
+        function createNoteElement(text) {
+            // Create wrapper card
+            const card = document.createElement('div');
+            card.className = 'note-card';
+
+            // Create text node
+            const textElement = document.createElement('span');
+            textElement.textContent = text;
+
+            // Create delete button
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'X';
+            deleteBtn.className = 'delete-btn';
+            
+            // Delete functionality using DOM node removal
+            deleteBtn.onclick = function() {
+                card.remove();
+                saveToLocalStorage(); // Update BOM Storage
+            };
+
+            // Assemble and inject into the document
+            card.appendChild(textElement);
+            card.appendChild(deleteBtn);
+            notesContainer.appendChild(card);
+        }
+
+        addBtn.addEventListener('click', () => {
+            const text = noteInput.value.trim();
+            if (text === '') {
+                // BOM usage: Browser alert dialog
+                window.alert('Please enter some text first!');
+                return;
+            }
+            createNoteElement(text);
+            noteInput.value = ''; // Reset input
+            saveToLocalStorage();
+        });
+
+        // --- 3. BOM (BROWSER OBJECT MODEL) APPLICATION FOR CREATIVITY ---
+        
+        // A. Dynamic Window Tracker: Responds creatively when browser size shifts
+        function updateWidthDisplay() {
+            windowWidthSpan.textContent = window.innerWidth;
+        }
+        window.addEventListener('resize', updateWidthDisplay);
+        updateWidthDisplay(); // Initial load run
+
+        // B. Dynamic Background Shift: Utilizes math and window styling elements
+        surpriseBtn.addEventListener('click', () => {
+            const randomColor = `hsl(${Math.floor(Math.random() * 360)}, 70%, 90%)`;
+            document.body.style.backgroundColor = randomColor;
+        });
+
+        // C. Persistence Layer: Saves current entries to the browser's Local Storage API
+        function saveToLocalStorage() {
+            const notes = [];
+            document.querySelectorAll('.note-card span').forEach(span => {
+                notes.push(span.textContent);
+            });
+            window.localStorage.setItem('savedNotes', JSON.stringify(notes));
+        }
+
+        // Load saved notes when browser window launches
+        window.addEventListener('load', () => {
+            const stored = window.localStorage.getItem('savedNotes');
+            if (stored) {
+                const notes = JSON.parse(stored);
+                notes.forEach(note => createNoteElement(note));
+            }
+        });
+    </script>
+</body>
+</html>
