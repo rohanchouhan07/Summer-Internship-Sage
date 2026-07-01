@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        :root {
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --accent: #3b82f6;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .weather-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            max-width: 400px;
+            color: var(--text-main);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .current-weather {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .temp-display {
+            font-size: 4rem;
+            font-weight: bold;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .hourly-section h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .hourly-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 250px;
+            overflow-y: auto;
+            border-radius: 8px;
+        }
+
+        /* Custom Scrollbar for the list */
+        .hourly-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        .hourly-list::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .hourly-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .hourly-item:last-child {
+            border-bottom: none;
+        }
+
+        .hourly-time {
+            font-weight: 500;
+        }
+
+        .hourly-temp {
+            font-weight: bold;
+        }
+        
+        .loading, .error {
+            text-align: center;
+            font-weight: bold;
+            color: var(--text-muted);
+        }
+        .error { color: #ef4444; }
+    </style>
+</head>
+<body>
+
+    <div class="weather-card">
+        <div class="header">
+            <h1>Berlin, Germany</h1>
+            <p>Lat: 52.52 | Lon: 13.41</p>
+        </div>
+
+        <div id="status" class="loading">Fetching weather data...</div>
+
+        <div id="weather-content" style="display: none;">
+            <div class="current-weather">
+                <p style="margin: 0; color: #6b7280; font-weight: 500;">Latest Update</p>
+                <div id="current-temp" class="temp-display">--°C</div>
+            </div>
+
+            <div class="hourly-section">
+                <h3>Next 24 Hours</h3>
+                <ul id="hourly-list" class="hourly-list">
+                    <!-- Hourly items will be injected here by JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m';
+
+        async function getWeatherData() {
+            try {
+                // 1. Fetch the data from the API
+                const response = await fetch(API_URL);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+
+                // 2. Extract arrays from the JSON response
+                const times = data.hourly.time;
+                const temps = data.hourly.temperature_2m;
+                const tempUnit = data.hourly_units.temperature_2m; // gets "°C"
+
+                // 3. Update Current Temperature (using the first data point)
+                document.getElementById('current-temp').textContent = `${temps[0]}${tempUnit}`;
+
+                // 4. Populate the hourly forecast list
+                const hourlyList = document.getElementById('hourly-list');
+                hourlyList.innerHTML = ''; // Clear any existing items
+
+                // Loop through the first 24 hours of data
+                for (let i = 0; i < 24; i++) {
+                    // Format the timestamp into a readable time (e.g., "14:00")
+                    const dateObj = new Date(times[i]);
+                    const timeString = dateObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    
+                    // Create the list item element
+                    const li = document.createElement('li');
+                    li.className = 'hourly-item';
+                    li.innerHTML = `
+                        <span class="hourly-time">${timeString}</span>
+                        <span class="hourly-temp">${temps[i]}${tempUnit}</span>
+                    `;
+                    
+                    // Append to the list
+                    hourlyList.appendChild(li);
+                }
+
+                // 5. Hide loading status and show the content
+                document.getElementById('status').style.display = 'none';
+                document.getElementById('weather-content').style.display = 'block';
+
+            } catch (error) {
+                console.error("Error fetching weather:", error);
+                const statusEl = document.getElementById('status');
+                statusEl.className = 'error';
+                statusEl.textContent = 'Failed to load weather data. Check console for details.';
+            }
+        }
+
+        // Execute the function when the page loads
+        getWeatherData();
+    </script>
+
+</body>
+</html>
